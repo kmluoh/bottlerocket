@@ -3,6 +3,14 @@
 use crate::settings::SettingsJson;
 use async_trait::async_trait;
 
+// FIXME: KMLUOH
+#[cfg(bottlerocket_platform = "kvm-dev")]
+mod local_file;
+#[cfg(bottlerocket_platform = "kvm-dev")]
+mod aws;
+#[cfg(bottlerocket_platform = "kvm-dev")]
+pub(crate) use aws::AwsDataProvider as Platform;
+
 #[cfg(bottlerocket_platform = "aws-dev")]
 mod local_file;
 
