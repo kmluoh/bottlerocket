@@ -337,6 +337,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "kvm-dev"
+version = "0.1.0"
+dependencies = [
+ "chrony",
+ "docker-cli",
+ "docker-engine",
+ "docker-init",
+ "docker-proxy",
+ "iputils",
+ "kernel-5_10",
+ "login",
+ "release",
+ "strace",
+ "tcpdump",
+]
+
+[[package]]
 name = "libacl"
 version = "0.1.0"
 dependencies = [

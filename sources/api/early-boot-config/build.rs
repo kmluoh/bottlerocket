@@ -19,6 +19,8 @@ fn main() {
             println!("cargo:rustc-cfg=bottlerocket_platform=\"aws\"");
         } else if variant.starts_with("vmware") {
             println!("cargo:rustc-cfg=bottlerocket_platform=\"vmware\"");
+        } else if variant.starts_with("kvm-dev") {
+            println!("cargo:rustc-cfg=bottlerocket_platform=\"kvm-dev\"");
         } else {
             eprintln!(
             "For local builds, you must set the 'VARIANT' environment variable so we know which data \

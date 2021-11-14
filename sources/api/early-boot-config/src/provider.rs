@@ -16,6 +16,14 @@ mod vmware;
 #[cfg(bottlerocket_platform = "vmware")]
 pub(crate) use vmware::VmwareDataProvider as Platform;
 
+// FIXME: KMLUOH
+#[cfg(bottlerocket_platform = "kvm-dev")]
+mod local_file;
+#[cfg(bottlerocket_platform = "kvm-dev")]
+mod aws;
+#[cfg(bottlerocket_platform = "kvm-dev")]
+pub(crate) use aws::AwsDataProvider as Platform;
+
 /// Support for new platforms can be added by implementing this trait.
 #[async_trait]
 pub(crate) trait PlatformDataProvider {
