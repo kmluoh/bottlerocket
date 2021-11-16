@@ -30,6 +30,7 @@ included-packages = [
     "strace",
     "tcpdump",
     "chrony-tools",
+    "util-linux",
 ]
 
 [lib]

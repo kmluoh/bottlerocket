@@ -20,9 +20,9 @@ pub(crate) use vmware::VmwareDataProvider as Platform;
 #[cfg(bottlerocket_platform = "kvm-dev")]
 mod local_file;
 #[cfg(bottlerocket_platform = "kvm-dev")]
-mod aws;
+mod kvm;
 #[cfg(bottlerocket_platform = "kvm-dev")]
-pub(crate) use aws::AwsDataProvider as Platform;
+pub(crate) use kvm::KvmDataProvider as Platform;
 
 /// Support for new platforms can be added by implementing this trait.
 #[async_trait]
